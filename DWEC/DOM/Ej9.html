@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ej9</title>
+</head>      
+<body>
+    <p>
+      <label for="comentarios">Ingrese sus comentarios:</label>
+    </p>
+    <p>
+      <textarea name="comentarios" id="comentarios" cols="30" rows="10" maxlength="50" oninput="contarCaracteres()"></textarea>
+    </p>
+    <p>
+      <span>Caracteres posibles:</span>
+      <span id="resultado">50</span>
+    </p>
+
+    <script>
+      function contarCaracteres() {
+          const textarea = document.getElementById('comentarios');
+          const resultadoSpan = document.getElementById('resultado');
+          
+          const longitudTexto = textarea.value.length;
+          const caracteresPosibles = parseInt(textarea.getAttribute('maxlength'));
+          const caracteresRestantes = caracteresPosibles - longitudTexto;
+
+          resultadoSpan.innerText = caracteresRestantes;
+      }
+  </script>
+
+  </body>
+  
+  </html>

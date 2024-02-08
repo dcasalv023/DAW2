@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej4</title>
+</head>
+<body>
+    <ul id="lista">
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetuer adipiscing elit</li>
+        <li>Sed mattis enim vitae orci</li>
+        <li>Phasellus libero</li>
+        <li>Maecenas nisl arcu</li>
+    </ul>
+    <input type="button" value="Añadir elemento" onclick="anade();">
+
+    <script>
+        function anade() {
+            const nuevoElemento = document.createElement('li');
+    
+            const NuevoTexto = "Texto que añado para el ejercicio 4 de la redacción de ejercicios de DOM";
+    
+            nuevoElemento.appendChild(document.createTextNode(NuevoTexto));
+    
+            const lista = document.getElementById('lista');
+    
+            lista.appendChild(nuevoElemento);
+        }
+    </script>
+    
+</body>
+</html>

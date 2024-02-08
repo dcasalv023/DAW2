@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Números Aleatorios</title>
+</head>
+<body>
+    <h2>Números Aleatorios</h2>
+    <button onclick="agregarNumero()">Nuevo número</button>
+    <ul id="listaNumeros"></ul>
+
+    <script>
+        function agregarNumero() {
+            // Generar un número aleatorio entre 1 y 100
+            const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+
+            // Crear un nuevo elemento li
+            const nuevoElemento = document.createElement('li');
+            nuevoElemento.textContent = numeroAleatorio;
+
+            // Obtener la lista ul
+            const listaNumeros = document.getElementById('listaNumeros');
+
+            // Agregar el nuevo elemento a la lista
+            listaNumeros.appendChild(nuevoElemento);
+        }
+    </script>
+</body>
+</html>

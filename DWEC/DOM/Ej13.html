@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Aleatorios</title>
+</head>
+<body>
+    <h2>Checkbox Aleatorios</h2>
+    <button onclick="marcarTodos()">Marcar todos</button>
+    <button onclick="desmarcarTodos()">Desmarcar todos</button>
+
+    <form id="formulario">
+        <!-- Agregar 100 checkboxes con números aleatorios -->
+        <script>
+            function crearCheckboxes() {
+                const formulario = document.getElementById('formulario');
+
+                for (let i = 0; i < 100; i++) {
+                    const numeroAleatorio = Math.floor(Math.random() * 1000);
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.id = `checkbox${i}`;
+                    checkbox.value = numeroAleatorio;
+
+                    const label = document.createElement('label');
+                    label.htmlFor = `checkbox${i}`;
+                    label.textContent = `Checkbox ${i + 1} - ${numeroAleatorio}`;
+
+                    formulario.appendChild(checkbox);
+                    formulario.appendChild(label);
+                    formulario.appendChild(document.createElement('br'));
+                }
+            }
+
+            function marcarTodos() {
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = true;
+                });
+            }
+
+            function desmarcarTodos() {
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+            }
+
+            // Crear los checkboxes al cargar la página
+            window.onload = crearCheckboxes;
+        </script>
+    </form>
+</body>
+</html>
