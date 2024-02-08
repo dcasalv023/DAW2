@@ -1,0 +1,20 @@
+{# templates/greeting/greet.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Saludo Personalizado{% endblock %}
+
+{% block content %}
+    <h1>Saludo Personalizado</h1>
+    {% if nombre is defined %}
+        {% if nombre == 'admin' %}
+            <p>Hola, administrador. ¡Bienvenido!</p>
+        {% else %}
+            <p>¡Hola, {{ nombre }}!</p>
+        {% endif %}
+    {% else %}
+        <p>¡Hola a todos!</p>
+    {% endif %}
+{% endblock %}
+
+
+

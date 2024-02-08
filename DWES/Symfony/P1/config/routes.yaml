@@ -1,0 +1,35 @@
+# routes.yaml
+
+# Define los controladores como un recurso
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+
+# Rutas para las páginas específicas
+home:
+    path: /home
+    controller: App\Controller\HomeController::index
+
+about:
+    path: /about
+    controller: App\Controller\PageController::about
+
+contact:
+    path: /contact
+    controller: App\Controller\PageController::contact
+
+redirect_home:
+    path: /redirect
+    controller: App\Controller\RedirectController::redirectHome
+
+redirect_external:
+    path: /external
+    controller: App\Controller\RedirectController::redirectExternal
+
+
+# Ruta para saludar con un nombre opcional
+greet:
+    path: /greet/{nombre?}
+    controller: App\Controller\GreetingController::greet
+
+
