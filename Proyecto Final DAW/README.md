@@ -11,9 +11,10 @@ cuyo aspecto y funcionalidad dependerá del rol del usuario registrado</p>
 
 
 
-|-------------|------------|------------|
-| Autor:Daniel Castillejo Álvarez| 
-| Tutor: Jose Luis|  
-|I.E.S Francisco Romero Vargas (Jerez de la frontera)|
-|Desarrollo Aplicaciones Web (DAW)|
-|Curso: 2023/2024|
+| Autor: Daniel Castillejo Álvarez | 
+|-----------------------------------|
+| Tutor: Jose Luis                  |
+| I.E.S Francisco Romero Vargas (Jerez de la Frontera) |
+| Desarrollo de Aplicaciones Web (DAW) |
+| Curso: 2023/2024                  |
+
