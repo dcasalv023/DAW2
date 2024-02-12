@@ -5,3 +5,15 @@ el cual está orientado principalmente a la industria del anime. La aplicación 
 cuyo aspecto y funcionalidad dependerá del rol del usuario registrado</p>
 
 ## Objetivos
+
+
+
+
+
+|             |   |  |
+|-------------|------------|------------|
+| Autor:      | Daniel Castillejo Álvarez        |
+| Tutor: | Jose Luis          |
+|I.E.S Francisco Romero Vargas (Jerez de la frontera)|
+|Desarrollo Aplicaciones Web (DAW)|
+|Curso:|2023/2024|
