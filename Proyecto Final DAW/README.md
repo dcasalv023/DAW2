@@ -30,21 +30,21 @@ En este proyecto, nos proponemos alcanzar los siguientes objetivos:
 
 1. **Desarrollar una plataforma funcional:** El princial objetivo es crear una tienda en línea funcional, donde los usuarios puedan explorar, buscar y comprar diferentes productos relacionados con el anime.:small_blue_diamond:
 
-2. **Integrar caracteristicas del anime:** Se quiere incluir caracteristicas del anime para que llame la atención a los aficionados.:small_orange_diamond:
+2. **Integrar caracteristicas del anime:** Se quiere incluir caracteristicas del anime para que llame la atención a los aficionados. :small_orange_diamond:
 
-3. **Facilitar la gestión de productos y pedidos:** Desarrollar un panel de administración intuitivo que permita a los propietarios de la tienda gestionar fácilmente los productos.:small_blue_diamond:
+3. **Facilitar la gestión de productos y pedidos:** Desarrollar un panel de administración intuitivo que permita a los propietarios de la tienda gestionar fácilmente los productos. :small_blue_diamond:
 
-4. **Sistema de login Seguro y Conveniente:** Implemnetar un sistema de login seguro que permita a los usuarios registrarse, iniciar sesión y acceder a las diferentes caracteristicas de la tienda.:small_orange_diamond:
+4. **Sistema de login Seguro y Conveniente:** Implemnetar un sistema de login seguro que permita a los usuarios registrarse, iniciar sesión y acceder a las diferentes caracteristicas de la tienda. :small_orange_diamond:
 
-5. **Implementar una base de datos eficiente:** Desarrollar una base de datos eficiente que permita almacenar y gestionar de manera segura la información de los productos, de los clientes y de los pedidos.:small_blue_diamond:
+5. **Implementar una base de datos eficiente:** Desarrollar una base de datos eficiente que permita almacenar y gestionar de manera segura la información de los productos, de los clientes y de los pedidos. :small_blue_diamond:
 
 ## Medios necesarios
 La aplicación se divide en dos partes: backend (servidor) y frontend (cliente). Las tecnologías que usaré para mi proyecto son:
-- **MYSQL** como gestor de bases de datos.:memo:
-- **Boostrap 5** y **CSS** para el diseño del proyecto.:memo:
-- **Draw.io** para la estructura del proyecto.:memo:
--  **Symfony** para la estructura del backend.:memo:
-- **Javascript** para la estructura del frontend.:memo:
+- **MYSQL** como gestor de bases de datos. :memo:
+- **Boostrap 5** y **CSS** para el diseño del proyecto. :memo:
+- **Draw.io** para la estructura del proyecto. :memo:
+-  **Symfony** para la estructura del backend. :memo:
+- **Javascript** para la estructura del frontend. :memo:
 
 ## Planificación
 En esta sección vamos a establecer un plan para el desarrollo y lanzamiento de nuestra tienda de anime. El proceso de planificación se dividirá en varias atapas, con sus propios objetivos.
@@ -84,6 +84,7 @@ móviles.
 >Preparación final del proyecto y entrega del producto completo y documentación asociada.
 
 **Total de horas estimado:** 40 horas.
+
 Las estimaciones de tiempo son aproximadas y podrían ser modificadas durante el transcurso del desarrollo del proyecto.
 
 
