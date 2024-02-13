@@ -17,13 +17,13 @@ cuyo aspecto y funcionalidad dependerá del rol del usuario registrado.
 
 ## Finalidad
 El proyecto consiste en una tienda online de distintos productos relacionados con el mundo del anime, en la que hay un catálogo de animes disponibles que puede ser consultado sin necesidad de registro, en cambio para comprar si que es necesario registrarse las caracteristicas de la tienda son:
-- Registro / login de usarios.
-- Compra de los distintos productos. (Se añaden al carrito)
-- Añadir los productos a la lista de deseados.
-- Consultar el historial de compra.
-- Busqueda del producto anime con la barra de búsqueda.
-- Administración de productos y de usuarios. (Solamente el administrador) 
-- Diseño responsive.
+- Registro / login de usarios. :bust_in_silhouette:
+- Compra de los distintos productos. (Se añaden al carrito) :handbag:
+- Añadir los productos a la lista de deseados. :envelope:
+- Consultar el historial de compra. 	:closed_book:
+- Busqueda del producto anime con la barra de búsqueda. :mag:
+- Administración de productos y de usuarios. (Solamente el administrador)  :lock_with_ink_pen:
+- Diseño responsive. :telephone_receiver:
 
 ## Objetivos
 En este proyecto, nos proponemos alcanzar los siguientes objetivos:
