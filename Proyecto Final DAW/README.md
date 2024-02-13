@@ -4,11 +4,11 @@
 
 ## Índice
 
-:one: [Introducción](#introducción)
-:two: [Finalidad](#finalidad)
-:three: [Objetivos](#objetivos)
-:four: [Medios necesarios](#medios-necesarios)
-:five: [Planificación](#planificación)
+-  [Introducción](#introducción) :one:
+-  [Finalidad](#finalidad) :two:
+-  [Objetivos](#objetivos) :three:
+-  [Medios necesarios](#medios-necesarios) :four:
+-  [Planificación](#planificación) :five:
 
 ## Introducción
 Este proyecto consiste en el desarrollo de una aplicación web destinada a una tienda
