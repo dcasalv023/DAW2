@@ -83,7 +83,7 @@ móviles.
 >Creación de la documentación del proyecto, incluyendo una descripción detallada de las características, instrucciones de instalación y uso.
 >Preparación final del proyecto y entrega del producto completo y documentación asociada.
 
-**Total de horas estimado:** 40 horas.
+**Total de horas estimado:** 50 horas.
 
 Las estimaciones de tiempo son aproximadas y podrían ser modificadas durante el transcurso del desarrollo del proyecto.
 
