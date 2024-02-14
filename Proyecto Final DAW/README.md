@@ -28,7 +28,7 @@ El proyecto consiste en una tienda online de distintos productos relacionados co
 ## Objetivos
 En este proyecto, nos proponemos alcanzar los siguientes objetivos:
 
-1. **Desarrollar una plataforma funcional:** El princial objetivo es crear una tienda en línea funcional, donde los usuarios puedan explorar, buscar y comprar diferentes productos relacionados con el anime.:small_blue_diamond:
+1. **Desarrollar una plataforma funcional:** El princial objetivo es crear una tienda en línea funcional, donde los usuarios puedan explorar, buscar y comprar diferentes productos relacionados con el anime. :small_blue_diamond:
 
 2. **Integrar caracteristicas del anime:** Se quiere incluir caracteristicas del anime para que llame la atención a los aficionados. :small_orange_diamond:
 
