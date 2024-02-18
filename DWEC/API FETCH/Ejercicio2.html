@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provincias de Argentina</title>
+</head>
+
+<body>
+
+    <h1>Provincias de Argentina</h1>
+    <ul id="provinces-list"></ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const provincesList = document.getElementById('provinces-list');
+
+            fetch('https://apis.datos.gob.ar/georef/api/provincias')
+                .then(response => response.json())
+                .then(data => {
+                    // Recorre los resultados y agrega elementos a la lista
+                    data.provincias.forEach(province => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `
+                            <strong>Nombre:</strong> ${province.nombre}<br>
+                            <strong>ID:</strong> ${province.id}<br>
+                            <strong>Latitud:</strong> ${province.centroide.lat}<br>
+                            <strong>Longitud:</strong> ${province.centroide.lon}<br>
+                        `;
+                        provincesList.appendChild(listItem);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al obtener datos:', error);
+                });
+        });
+    </script>
+
+</body>
+
+</html>

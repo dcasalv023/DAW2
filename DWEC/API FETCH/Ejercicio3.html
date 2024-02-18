@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocalización IP</title>
+</head>
+
+<body>
+
+    <h1>Información de Geolocalización IP</h1>
+    <ul id="location-info"></ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const locationInfo = document.getElementById('location-info');
+
+            fetch('https://freegeoip.app/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const ip = data.ip;
+                    const country = data.country_name;
+                    const city = data.city;
+                    const zipCode = data.zip_code;
+
+                    // Crear elementos de lista con la información de geolocalización IP
+                    const ipListItem = document.createElement('li');
+                    ipListItem.textContent = `IP: ${ip}`;
+                    locationInfo.appendChild(ipListItem);
+
+                    const countryListItem = document.createElement('li');
+                    countryListItem.textContent = `País: ${country}`;
+                    locationInfo.appendChild(countryListItem);
+
+                    const cityListItem = document.createElement('li');
+                    cityListItem.textContent = `Ciudad: ${city}`;
+                    locationInfo.appendChild(cityListItem);
+
+                    const zipCodeListItem = document.createElement('li');
+                    zipCodeListItem.textContent = `Código Postal: ${zipCode}`;
+                    locationInfo.appendChild(zipCodeListItem);
+                })
+                .catch(error => {
+                    console.error('Error al obtener datos de geolocalización IP:', error);
+                });
+        });
+    </script>
+
+</body>
+
+</html>

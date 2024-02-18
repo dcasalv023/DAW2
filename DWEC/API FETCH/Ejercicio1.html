@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes de Star Wars</title>
+</head>
+
+<body>
+
+    <h1>Personajes de Star Wars</h1>
+    <ul id="people-list"></ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const peopleList = document.getElementById('people-list');
+
+            fetch('https://swapi.dev/api/people/')
+                .then(response => response.json())
+                .then(data => {
+                    // Recorre los resultados y agrega elementos a la lista
+                    data.results.forEach(person => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `
+                            <strong>Nombre:</strong> ${person.name}<br>
+                            <strong>Género:</strong> ${person.gender}<br>
+                            <strong>Altura:</strong> ${person.height} cm<br>
+                            <strong>Peso:</strong> ${person.mass} kg<br>
+                            <strong>Color de cabello:</strong> ${person.hair_color}<br>
+                            <strong>Color de piel:</strong> ${person.skin_color}<br>
+                            <strong>Color de ojos:</strong> ${person.eye_color}<br>
+                            <strong>Año de nacimiento:</strong> ${person.birth_year}<br>
+                            <strong>Planeta de origen:</strong> <a href="${person.homeworld}">${person.homeworld}</a><br>
+                            <strong>Películas:</strong> ${person.films.join(", ")}<br>
+                            <strong>Especies:</strong> ${person.species.join(", ")}<br>
+                            <strong>Vehículos:</strong> ${person.vehicles.join(", ")}<br>
+                            <strong>Naves estelares:</strong> ${person.starships.join(", ")}<br>
+                            <strong>Creado:</strong> ${person.created}<br>
+                            <strong>Editado:</strong> ${person.edited}<br>
+                            <strong>URL:</strong> <a href="${person.url}">${person.url}</a><br>
+                        `;
+                        peopleList.appendChild(listItem);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error al obtener datos:', error);
+                });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de Usuario</title>
+    <style>
+        img {
+            max-width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Información de Usuario</h1>
+    <div id="user-info">
+        <p>Cargando...</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('https://randomuser.me/api/')
+                .then(response => response.json())
+                .then(data => {
+                    const user = data.results[0];
+                    const firstName = user.name.first;
+                    const lastName = user.name.last;
+                    const gender = user.gender;
+
+                    // Mostrar el primer y segundo nombre
+                    const userInfoDiv = document.getElementById('user-info');
+                    userInfoDiv.innerHTML = `
+                        <h2>Datos del Usuario</h2>
+                        <p><strong>Primer Nombre:</strong> ${firstName}</p>
+                        <p><strong>Segundo Nombre:</strong> ${lastName}</p>
+                    `;
+
+                    // Obtener y mostrar la imagen según el género
+                    const img = document.createElement('img');
+                    img.src = gender === 'male' ? 'hombre.png' : 'mujer.png';
+                    userInfoDiv.appendChild(img);
+                })
+                .catch(error => {
+                    console.error('Error al obtener datos del usuario:', error);
+                    const userInfoDiv = document.getElementById('user-info');
+                    userInfoDiv.innerHTML = '<p>Ocurrió un error al cargar los datos del usuario.</p>';
+                });
+        });
+    </script>
+</body>
+
+</html>
