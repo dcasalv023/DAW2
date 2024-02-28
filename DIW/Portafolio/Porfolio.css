@@ -1,0 +1,42 @@
+/* Estilos para la sección hero */
+.hero {
+    padding: 50px 20px;
+    background-color: #fff; /* Color de fondo blanco */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #333; /* Color del texto principal */
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555; /* Color del texto secundario */
+}
+
+.hero-text .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    background-color: #333; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+}
+
+.hero-text .btn:hover {
+    background-color: #555; /* Color de fondo del botón al pasar el mouse */
+}
+
+.main-image {
+    margin-bottom: 20px;
+}
+
+.small-image {
+    margin-bottom: 10px;
+}
+
