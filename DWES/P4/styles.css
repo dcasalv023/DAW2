@@ -1,0 +1,40 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.error-message {
+    color: red;
+}
+
+form {
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+label, select {
+    margin-bottom: 10px;
+}
+
+a.reset-link {
+    color: red;
+    text-decoration: underline;
+    cursor: pointer;
+}
