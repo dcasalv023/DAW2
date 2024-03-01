@@ -1,39 +1,72 @@
-<?php
-session_start(); // Iniciamos la sesión
-
-// Verificamos si el usuario está autenticado
-if(!isset($_SESSION['usuario'])) {
-    header("Location: index.php"); // Redirigimos al usuario a la página de inicio de sesión
-    exit;
-}
-
-include 'conexion.php'; // Archivo de conexión a la base de datos
-include 'Usuarios.php'; // Clase Usuarios
-
-$usuario = $_SESSION['usuario'];
-$usuarios = new Usuarios($conexion);
-?>
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Aplicación</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application</title>
 </head>
 <body>
-    <h2>Bienvenido a la aplicación</h2>
-    <p>Hola, <?php echo $usuario; ?>.</p>
-    <p>Esta es la aplicación.</p>
+    <?php
+    session_start();
+    require("Usuarios.php");
+    echo 'Inicio en la Aplicación con éxito';
+    ?>
+    <h1>Bienvenido <?php echo $_SESSION['username']?></h1>
+    <h2>Inicio sesión : <?php echo $_SESSION['login_time']?></h2>
+    <form action="application.php" method="post">
+        <button type="submit" name="register_form">Registrar nuevo usuario</button>
+        <button type="submit" name="modify_user">Modificar usuario</button>
+        <button type="submit" name="delete_user">Eliminar usuario</button>
+        <button type="submit" name="logout">Cerrar sesión</button>
+    </form>
     
-    <!-- Opciones de la aplicación -->
-    <ul>
-        <li><a href="alta_usuario.php">Dar de alta un usuario</a></li>
-        <li><a href="modificar_usuario.php">Modificar tus datos</a></li>
-        <li><a href="eliminar_usuario.php">Eliminar tu cuenta</a></li>
-    </ul>
-    
-    <!-- Enlace para salir de la sesión -->
-    <a href="salir.php">Salir</a>
+    <?php
+    if (isset($_POST["logout"])) {
+        session_unset();
+        session_destroy();
+        header("Location: index.php");
+        exit();
+    }
+
+    if(isset($_POST["register_form"])){
+        echo "<br>";
+        displayRegistrationForm();
+    }
+
+    if(isset($_POST["modify_user"])){
+        echo "<br>";
+        displayModifyForm();
+    }
+
+    if(isset($_POST["modify"])){
+        if(findUserData()){
+            $user = findUserData();
+            displayModifyUserForm($user);
+        }else{
+            echo "<br>";
+            echo "Usuario no encontrado.";
+        }
+    }
+
+    if(isset($_POST["modify_data"])){
+        echo "<br>";
+        modifyUser();
+    }
+
+    if(isset($_POST["delete_user"])){
+        echo "<br>";
+        displayDeleteForm();
+    }
+
+    if(isset($_POST['register'])){
+        registerUser();
+    }
+
+    if(isset($_POST['delete'])){
+        deleteUser();
+    }
+    echo "<br>";
+    displayUserData();
+    ?>
 </body>
 </html>
-

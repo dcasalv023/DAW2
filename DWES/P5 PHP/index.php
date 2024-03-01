@@ -1,49 +1,51 @@
-<?php
-session_start();
-
-include 'conexion.php'; // Archivo de conexión a la base de datos
-
-// Incluye la clase Usuarios
-include 'Usuarios.php'; 
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $usuario = $_POST['usuario'];
-    $contraseña = $_POST['contraseña'];
-
-    // Crear instancia de Usuarios pasando la conexión a la base de datos
-    $usuarios = new Usuarios($conexion);
-
-    if ($usuarios->validarInicioSesion($usuario, $contraseña)) {
-        $_SESSION['usuario'] = $usuario;
-        header('Location: aplicacion.php');
-        exit;
-    } else {
-        $error = "Usuario o contraseña incorrectos";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Iniciar sesión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
 </head>
 <body>
-
-<h2>Iniciar sesión</h2>
-<form method="post" action="">
-    <label for="usuario">Usuario:</label><br>
-    <input type="text" id="usuario" name="usuario"><br>
-    <label for="contraseña">Contraseña:</label><br>
-    <input type="password" id="contraseña" name="contraseña"><br><br>
-    <input type="submit" value="Iniciar sesión">
+<form action="index.php" method="post">
+    <label for="username">Usuario:</label>
+    <input type="text" id="username" name="username" required><br>
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password" required><br>
+    <button type="submit" name="login">Iniciar Sesión</button>
 </form>
 
-<?php if (isset($error)) echo $error; ?>
 
+    <?php
+    session_start();
+    include("Usuarios.php");
+
+    if (isset($_SESSION['authenticated_user']) && $_SESSION['authenticated_user'] === true) {
+        header("Location: application.php");
+        exit();
+    }
+
+    if (isset($_POST['login'])) {
+        $username = $_POST["username"]; // Usando "username" en lugar de "usu1"
+        $password = $_POST["password"]; // Usando "password" en lugar de "toor"
+        $loginTime = date('H:i:s');
+    
+        $storedHash = getDatabaseHash($username);
+    
+        if ($storedHash && password_verify($password, $storedHash)) {
+            $_SESSION['authenticated_user'] = true;
+            $_SESSION['username'] = $username;
+            $_SESSION['login_time'] = $loginTime;
+            header("Location: application.php");
+            exit();
+        } else {
+            echo "Usuario o contraseña incorrectos.";
+        }
+    }
+    
+    ?>
 </body>
 </html>
+
 
 
 
