@@ -1,18 +1,31 @@
 <?php
-// Configuración de la base de datos
-$servername = "localhost";
-$username = "tu_usuario"; // Reemplaza con tu nombre de usuario de la base de datos
-$password = "tu_contraseña"; // Reemplaza con tu contraseña de la base de datos
-$database = "tarea4";
+session_start();
 
-// Crear conexión
-$conexion = new mysqli($servername, $username, $password, $database);
-
-// Verificar la conexión
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
+if (!isset($_SESSION['usuario'])) {
+    header('Location: index.php');
+    exit;
 }
 
-// Establecer el conjunto de caracteres
-$conexion->set_charset("utf8");
+include 'conexion.php'; // Archivo de conexión a la base de datos
+include 'Usuarios.php'; // Clase Usuarios
+
+$usuario = $_SESSION['usuario'];
+$usuarios = new Usuarios($conexion);
 ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplicación</title>
+</head>
+<body>
+
+<h2>Bienvenido a la aplicación</h2>
+<p>Has accedido como <?php echo $usuario; ?></p>
+
+<!-- Aquí puedes agregar los enlaces para dar de alta, modificar, eliminar usuarios y salir -->
+
+</body>
+</html>
+

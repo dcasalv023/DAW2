@@ -40,8 +40,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `pwd`, `email`) VALUES
-(1, 'usu1', '$1$Dg5.QS0.$jn69c/DGOL4.I7wNr1QqI0', 'usu1@gmail.com'),
-(3, 'usu2', '$1$1.2..i3.$t88.rn7imzbSr/3sQ8e.x/', 'usu2@gmail.com');
+(1, 'usu1', 'toor', 'usu1@gmail.com'),
+(3, 'usu2', 'toor', 'usu2@gmail.com');
 
 --
 -- Índices para tablas volcadas

@@ -1,5 +1,4 @@
 <?php
-require_once 'conexion.php'; // Incluimos el archivo de conexión
 
 class Usuarios {
     private $conexion;
@@ -8,71 +7,52 @@ class Usuarios {
         $this->conexion = $conexion;
     }
 
-    public function validarUsuario($usuario, $contrasena) {
-        // Consulta SQL para validar el usuario
-        $consulta = "SELECT * FROM usuarios WHERE usuario = ?";
-        
-        // Preparar la consulta
-        $stmt = $this->conexion->prepare($consulta);
+    public function validarInicioSesion($usuario, $contraseña) {
+        // Verificar en la base de datos si el usuario y la contraseña son válidos
+        $stmt = $this->conexion->prepare("SELECT * FROM usuarios WHERE usuario = ?");
         $stmt->bind_param("s", $usuario);
-
-        // Ejecutar la consulta
         $stmt->execute();
+        $result = $stmt->get_result();
 
-        // Obtener el resultado de la consulta
-        $resultado = $stmt->get_result();
-
-        // Verificar si se encontró un usuario con el nombre proporcionado
-        if ($resultado->num_rows == 1) {
-            $usuarioBD = $resultado->fetch_assoc();
-
-            // Verificar si la contraseña coincide utilizando password_verify
-            if (password_verify($contrasena, $usuarioBD['pwd'])) {
-                return true; // Usuario y contraseña válidos
+        if ($result->num_rows == 1) {
+            $row = $result->fetch_assoc();
+            if (password_verify($contraseña, $row['pwd'])) {
+                return true;
             }
         }
-
-        return false; // Usuario o contraseña incorrectos
+        return false;
     }
 
-    public function existeUsuario($usuario) {
-        // Consulta SQL para verificar si el usuario ya existe
-        $consulta = "SELECT COUNT(*) AS total FROM usuarios WHERE usuario = ?";
-        
-        // Preparar la consulta
-        $stmt = $this->conexion->prepare($consulta);
-        $stmt->bind_param("s", $usuario);
-
-        // Ejecutar la consulta
-        $stmt->execute();
-
-        // Obtener el resultado de la consulta
-        $resultado = $stmt->get_result();
-
-        // Obtener el número de filas encontradas
-        $fila = $resultado->fetch_assoc();
-        $total = $fila['total'];
-
-        return $total > 0; // Devolver verdadero si el usuario existe, falso si no existe
-    }
-
-    public function registrarUsuario($usuario, $contrasena, $email) {
+    public function crearUsuario($usuario, $contraseña, $email) {
         // Hash de la contraseña
-        $hashed_password = password_hash($contrasena, PASSWORD_DEFAULT);
+        $hashContraseña = password_hash($contraseña, PASSWORD_DEFAULT);
 
-        // Consulta SQL para insertar el nuevo usuario
-        $consulta = "INSERT INTO usuarios (usuario, pwd, email) VALUES (?, ?, ?)";
+        // Insertar usuario en la base de datos
+        $stmt = $this->conexion->prepare("INSERT INTO usuarios (usuario, pwd, email) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $usuario, $hashContraseña, $email);
+        return $stmt->execute();
+    }
 
-        // Preparar la consulta
-        $stmt = $this->conexion->prepare($consulta);
-        $stmt->bind_param("sss", $usuario, $hashed_password, $email);
+    public function modificarUsuario($id, $usuario, $contraseña, $email) {
+        // Hash de la contraseña si se ha proporcionado
+        $hashedContraseña = "";
+        if ($contraseña !== "") {
+            $hashContraseña = password_hash($contraseña, PASSWORD_DEFAULT);
+            $hashedContraseña = ", pwd = '$hashContraseña'";
+        }
 
-        // Ejecutar la consulta
-        return $stmt->execute(); // Devolver verdadero si se inserta correctamente, falso si hay un error
+        // Actualizar usuario en la base de datos
+        $stmt = $this->conexion->prepare("UPDATE usuarios SET usuario = ?, email = ? $hashedContraseña WHERE id = ?");
+        $stmt->bind_param("ssi", $usuario, $email, $id);
+        return $stmt->execute();
+    }
+
+    public function eliminarUsuario($id) {
+        // Eliminar usuario de la base de datos
+        $stmt = $this->conexion->prepare("DELETE FROM usuarios WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        return $stmt->execute();
     }
 }
 
-// Creamos una instancia de la clase Usuarios
-$usuarios = new Usuarios($conexion);
 ?>
-
