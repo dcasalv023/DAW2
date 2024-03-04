@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Portafolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Porfolio.css">
+</head>
+
+<style>
+    /* Estilos generales */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f3f3f3;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+        margin-right: auto;
+    }
+
+    .navbar-nav {
+        margin-left: auto;
+    }
+
+    .nav-item {
+        margin-right: 20px;
+    }
+
+    .testimonios {
+        padding: 50px 0;
+    }
+
+    .carousel-inner {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .carousel-item {
+        text-align: center;
+        padding: 50px 0;
+    }
+
+    .carousel-caption {
+        margin-top: 20px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: auto;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: transparent;
+    }
+
+    @media (max-width: 768px) {
+        .nav-item {
+            margin-right: 10px;
+        }
+    }
+</style>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="Portfolio1.html">Portfolio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Portfolio1.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="experiencia.html">Experiencia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container hero">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-text">
+                        <h1>Bienvenido a mi Portafolio</h1>
+                        <p>Soy Daniel y estoy aquí para mostrar mis proyectos.</p>
+                        <a href="proyecto.html" class="btn btn-primary">Ver Proyectos</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 d-flex justify-content-center">
+                    <img src="Porfolio.jpg" alt="Imagen de Perfil" class="img-fluid rounded-circle main-image">
+                </div>
+                <div class="col-lg-3 d-flex justify-content-center">
+                    <img src="html.png" alt="html" class="img-fluid rounded-circle small-image" style="width: 75px; height: 75px;">
+                    <img src="php.png" alt="php" class="img-fluid rounded-circle small-image" style="width: 75px; height: 75px;">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <section class="testimonios">
+        <div class="container">
+            <h2>Testimonios</h2>
+            <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <h3>Testimonio 1</h3>
+                        <p>"¡Increíble trabajo! Estoy muy impresionado con la profesionalidad y la calidad del servicio proporcionado.<br>
+                            Definitivamente recomendaré este servicio a todos mis amigos y colegas". - Juan Pérez</p>
+                        <p>- Cliente 1</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Testimonio 2</h3>
+                        <p>"He trabajado con muchos profesionales a lo largo de los años, pero nunca he encontrado a alguien tan dedicado y talentoso como este equipo.<br> Estoy extremadamente satisfecho 
+                            con los resultados y espero trabajar juntos nuevamente en el futuro. - María González."</p>
+                        <p>- Cliente 2</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Testimonio 3</h3>
+                        <p>"Gracias a este servicio, pude llevar mi proyecto al siguiente nivel. Su atención al detalle y su enfoque centrado en el cliente hicieron que todo el proceso<br> 
+                            fuera suave y sin complicaciones. ¡No podría estar más feliz con los resultados! - Carlos Rodríguez."</p>
+                        <p>- Cliente 3</p>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Posterior</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Aquí irían más secciones como "Proyectos" y "Contacto" -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Porfolio.js"></script>
+</body>
+</html>
+
+
+

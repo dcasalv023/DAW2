@@ -25,8 +25,8 @@
     }
 
     if (isset($_POST['login'])) {
-        $username = $_POST["username"]; // Usando "username" en lugar de "usu1"
-        $password = $_POST["password"]; // Usando "password" en lugar de "toor"
+        $username = $_POST["username"]; 
+        $password = $_POST["password"]; 
         $loginTime = date('H:i:s');
     
         $storedHash = getDatabaseHash($username);
