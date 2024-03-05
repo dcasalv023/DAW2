@@ -2,8 +2,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Inicio from './components/Inicio';
+import Register from './components/Register';
 import AcercaDe from './components/AcercaDe';
-import AltaUsuario from './components/AltaUsuario';
 import Error from './components/Error';
 import Navbar from './components/navbar';
 import Calculadora from './Paginas/calculadora';
@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route  path="/" element={<Inicio/>} />
           <Route path="/acerca-de" element={<AcercaDe/>} />
-          <Route path="/Alta-usuario" element={<AltaUsuario/>} />
+          <Route path="/Register" element={<Register/>} />
           <Route path="/Error" element={<Error/>} />
           <Route path="/Calculadora" element={<Calculadora/>} />
         </Routes>

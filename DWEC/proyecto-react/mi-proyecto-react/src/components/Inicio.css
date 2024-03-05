@@ -1,0 +1,51 @@
+/* Estilos para el componente de Inicio */
+
+/* Título */
+h2 {
+    color: #333;
+    font-size: 2.5rem;
+  }
+  
+  /* Contenedor */
+  .Container {
+    padding: 20px;
+  }
+  
+  /* Imagen */
+  .img-fluid {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Texto */
+  p {
+    color: #666;
+    font-size: 1.2rem;
+  }
+  
+  /* Botón */
+  .Button {
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+  
+/* Estilos para el componente de Inicio */
+.Inicio {
+    background-image: url('../images/Fondo.webp'); /* Cambia 'Fondo.jpg' por el nombre exacto de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Estilos para el contenido dentro del componente de Inicio */
+  .Contenido {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para hacer legible el contenido */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
