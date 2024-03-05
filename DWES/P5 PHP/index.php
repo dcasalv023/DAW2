@@ -20,7 +20,7 @@
     include("Usuarios.php");
 
     if (isset($_SESSION['authenticated_user']) && $_SESSION['authenticated_user'] === true) {
-        header("Location: application.php");
+        header("Location: aplicacion.php");
         exit();
     }
 
@@ -35,7 +35,7 @@
             $_SESSION['authenticated_user'] = true;
             $_SESSION['username'] = $username;
             $_SESSION['login_time'] = $loginTime;
-            header("Location: application.php");
+            header("Location: aplicacion.php");
             exit();
         } else {
             echo "Usuario o contraseña incorrectos.";

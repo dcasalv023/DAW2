@@ -98,7 +98,7 @@ class Usuario
 function displayRegistrationForm()
 {
     echo "<h2>Da de alta a un usuario</h2>
-    <form action='application.php' method='post'>
+    <form action='aplicacion.php' method='post'>
     <label for='usuario'>Usuario:</label>
     <input type='text' id='usuario' name='usuario' required>
     <br>
@@ -124,7 +124,7 @@ function displayModifyForm()
     // Check if the array of users is not empty.
     if (!empty($arrayUsuarios)) {
 
-        echo '<form action="application.php" method="post">';
+        echo '<form action="aplicacion.php" method="post">';
 
         echo '<select name="usuario">';
 
@@ -150,7 +150,7 @@ function displayModifyForm()
 function displayModifyUserForm($usuario)
 {
     echo "<h2>Modifica el usuario</h2>
-    <form action='application.php' method='post'>
+    <form action='aplicacion.php' method='post'>
     <input type='hidden' id='usuario' name='usuario' value='" . $usuario->getUsername() . "'>
     <label for='usuario'>Usuario:</label>
     <input type='text' id='usuarioN' name='usuarioN' value='" . $usuario->getUsername() . "'required>
@@ -178,7 +178,7 @@ function displayDeleteForm()
     // Check if the array of users is not empty.
     if (!empty($arrayUsuarios)) {
 
-        echo '<form action="application.php" method="post">';
+        echo '<form action="aplicacion.php" method="post">';
 
         echo '<select name="usuarios">';
 

@@ -13,7 +13,7 @@ function Navbar() {
           <Link to="/acerca-de">Acerca de</Link>
         </li>
         <li>
-          <Link to="/alta-usuario">Alta de Usuario</Link>
+          <Link to="/register">Alta de Usuario</Link>
         </li>
         <li>
           <Link to="/calculadora">Calculadora</Link>

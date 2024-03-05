@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application</title>
+    <title>Aplicacion</title>
 </head>
 <body>
     <?php
@@ -13,7 +13,7 @@
     ?>
     <h1>Bienvenido <?php echo $_SESSION['username']?></h1>
     <h2>Inicio sesión : <?php echo $_SESSION['login_time']?></h2>
-    <form action="application.php" method="post">
+    <form action="aplicacion.php" method="post">
         <button type="submit" name="register_form">Registrar nuevo usuario</button>
         <button type="submit" name="modify_user">Modificar usuario</button>
         <button type="submit" name="delete_user">Eliminar usuario</button>
