@@ -7,6 +7,8 @@ import AcercaDe from './components/AcercaDe';
 import Error from './components/Error';
 import Navbar from './components/navbar';
 import Calculadora from './Paginas/calculadora';
+import IniciarSesion from './components/IniciarSesion';
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route  path="/" element={<Inicio/>} />
+          <Route path="/IniciarSesion" element={<IniciarSesion/>} />
           <Route path="/acerca-de" element={<AcercaDe/>} />
           <Route path="/Register" element={<Register/>} />
           <Route path="/Error" element={<Error/>} />

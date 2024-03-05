@@ -1,57 +1,58 @@
-import React, {useState} from 'react'
+// Register.jsx
+import React, { useState } from 'react';
 
-const Register =()=> {
-    const [usuario, setUsuario] = useState ({
-        nombreUsuario: '',
-        contrasena: ''
-    });
+const Register = () => {
+  const [usuario, setUsuario] = useState({
+    nombreUsuario: '',
+    contrasena: ''
+  });
 
-    const handleChange = (e) => {
-        const {name,value} =e.target;
-        setUsuario(prevUsuario => ({
-            ...prevUsuario,
-            [name]:value
-        }))
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUsuario(prevUsuario => ({
+      ...prevUsuario,
+      [name]: value
+    }));
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:3002/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(usuario)
+      });
+  
+      if (response.ok) {
+        alert('Usuario registrado exitosamente');
+        // Redirigir al usuario a la página de inicio de sesión
+        // Puedes usar window.location.href o history.push para la redirección
+      } else {
+        throw new Error('Error al registrar usuario.');
+      }
+    } catch (error) {
+      console.error('Error al registrar usuario:', error.message);
+      alert('Error al registrar usuario. Inténtalo nuevamente.');
     }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        fetch('http://localhost:3001/usuarios', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(usuario)
-        })
-
-        .then(response => {
-            if(response.ok){
-                return response.json()
-            } else {
-                throw new Error ('Registro no exitoso')
-            }
-        })
-        .then(data=> {
-            alert('Registrado con exito')
-        })
-        .catch(error => {
-            alert('Error al registrar')
-        })
-    }
+  };
+  
+  
 
   return (
     <div>
-        <form onSubmit={handleSubmit}>
-            <h1>Registrarse</h1>
-            <label>Nombre de usuario</label>
-            <input type='text' name='nombreUsuario' value={usuario.nombreUsuario} onChange={handleChange}></input>
-            <label>Contraseña</label>
-            <input type='password' name='contrasena' value={usuario.contrasena} onChange={handleChange}></input>
-
-            <button type='submit'>Registrarse</button>
-        </form>
+      <h1>Registrarse</h1>
+      <form onSubmit={handleSubmit}>
+        <label>Nombre de usuario</label>
+        <input type='text' name='nombreUsuario' value={usuario.nombreUsuario} onChange={handleChange} />
+        <label>Contraseña</label>
+        <input type='password' name='contrasena' value={usuario.contrasena} onChange={handleChange} />
+        <button type='submit'>Registrarse</button>
+      </form>
     </div>
   )
 }
 
-export default Register
+export default Register;

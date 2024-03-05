@@ -1,3 +1,25 @@
 {
-    
+  "users": [
+    {
+      "id": "1",
+      "username": "dani",
+      "password": "2205"
+    },
+    {
+      "id": "2",
+      "username": "Rem",
+      "password": "Subaru"
+    },
+    {
+      "id": "3",
+      "username": "Sinon",
+      "password": "Rifle"
+    },
+    {
+      "id": "cdc7",
+      "nombreUsuario": "we",
+      "contrasena": "wew"
+    }
+
+  ]
 }

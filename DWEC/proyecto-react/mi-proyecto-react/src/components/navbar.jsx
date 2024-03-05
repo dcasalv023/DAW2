@@ -1,26 +1,54 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './navbar.css'; 
+ 
+const Navbar = () => {
+  const navigate = useNavigate();
+  const usuarioLogueado = sessionStorage.getItem('usuarioLogueado');
 
-function Navbar() {
+  const handleLogout = () => {
+    sessionStorage.removeItem('usuarioLogueado'); 
+    navigate('/');
+  };
+
   return (
-    <div className="navbar">
-      <ul>
-        <li>
-          <Link to="/" className="active">Inicio</Link>
-        </li>
-        <li>
-          <Link to="/acerca-de">Acerca de</Link>
-        </li>
-        <li>
-          <Link to="/register">Alta de Usuario</Link>
-        </li>
-        <li>
-          <Link to="/calculadora">Calculadora</Link>
-        </li>
-      </ul>
-    </div>
+    <nav className="navbar navbar-expand-lg navbar-info bg-info">
+      <div className="container">
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">Inicio</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/Acerca-de" className="nav-link">Acerca de</Link>
+            </li>
+            {!usuarioLogueado  ? (
+              <>
+                <li className="nav-item">
+                  <Link to="/Register" className="nav-link">Alta de Usuario</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/IniciarSesion" className="nav-link">Login</Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <Link to="/calculadora" className="nav-link">Calculadora</Link>
+                </li>
+                <li className="nav-item">
+                  <button className="nav-link btn btn-link" onClick={handleLogout}>Cerrar Sesión</button>
+                </li>
+              </>
+            )}
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
-}
+};
 
 export default Navbar;

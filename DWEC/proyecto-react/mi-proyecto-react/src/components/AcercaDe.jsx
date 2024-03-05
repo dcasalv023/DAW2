@@ -4,8 +4,10 @@ import './AcercaDe.css';
 
 function AcercaDe() {
   return (
-    <Container className="mt-5">
-      <h2 className="mb-4">Pokemon</h2>
+    <Container className=" mt-5 Contenido">
+      <div className="fondo-blanco">
+        <div className="content">
+          <h2 className="mb-4">Pokemon</h2>
       <p>
       <strong>Pokémon</strong>, abreviado como <strong>PKMN</strong> en ocasiones y conocido como (Pocket Monsters) en japonés, es una famosa franquicia de videojuegos que inició como un RPG para las consolas de Nintendo. 
       Fue creada por Satoshi Tajiri en 1995 y su éxito se extendió a otros géneros de videojuegos y formas de entretenimiento, incluyendo una exitosa serie de anime, manga y una amplia gama de productos de colección como cartas del TCG y muñecos. Antes de la llegada de Pokémon Rojo y Azul a España, se publicó una revista llamada Los libros de Neko: Pocket Monster's, que adelantaba detalles sobre la franquicia. 
@@ -162,6 +164,8 @@ function AcercaDe() {
     en países asiáticos. Algunos mangas están basados en el anime, otros en los videojuegos, y algunos se centran en el Pokémon Trading Card Game.
     Sin embargo, el manga de Pokémon es menos conocido en Europa y Latinoamérica debido a su publicación limitada a Japón, China, Singapur y Estados Unidos.
     </p>
+    </div>
+    </div>
     </Container>
   );
 }
