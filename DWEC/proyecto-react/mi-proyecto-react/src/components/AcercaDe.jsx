@@ -4,6 +4,7 @@ import './AcercaDe.css';
 
 function AcercaDe() {
   return (
+    <body className="Cuerpo">
     <Container className=" mt-5 Contenido">
       <div className="fondo-blanco">
         <div className="content">
@@ -167,6 +168,7 @@ function AcercaDe() {
     </div>
     </div>
     </Container>
+    </body>
   );
 }
 
