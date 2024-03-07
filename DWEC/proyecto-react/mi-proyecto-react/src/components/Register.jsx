@@ -4,8 +4,8 @@ import './Register.css';
 
 const Register = () => {
   const [usuario, setUsuario] = useState({
-    nombreUsuario: '',
-    contrasena: ''
+    username: '',
+    password: ''
   });
 
   const handleChange = (e) => {
@@ -47,9 +47,9 @@ const Register = () => {
       <h1>Registrarse</h1>
       <form onSubmit={handleSubmit}>
         <label>Nombre de usuario</label>
-        <input type='text' name='nombreUsuario' value={usuario.nombreUsuario} onChange={handleChange} />
+        <input type='text' name='username' value={usuario.username} onChange={handleChange} />
         <label>Contraseña</label>
-        <input type='password' name='contrasena' value={usuario.contrasena} onChange={handleChange} />
+        <input type='password' name='password' value={usuario.password} onChange={handleChange} />
         <button type='submit'>Registrarse</button>
       </form>
     </div>
