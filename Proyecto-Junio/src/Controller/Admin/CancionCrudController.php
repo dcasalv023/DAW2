@@ -23,15 +23,13 @@ class CancionCrudController extends AbstractCrudController
             TextField::new('autor', 'Autor'),
             TextField::new('genero', 'Género'),
             ImageField::new('foto', 'Foto')
-                ->setBasePath('uploads/images')
+                ->setBasePath('/uploads/images') 
                 ->setUploadDir('public/uploads/images')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false),
-            TextField::new('audio', 'Archivo de Audio')
-                ->setBasePath('uploads/audios')
-                ->setUploadDir('public/uploads/audios')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false),
+                ImageField::new('audio', 'Archivo de audio')
+                ->setBasePath('/uploads/music')
+                ->setUploadDir('public/uploads/music')
+                ->hideOnIndex()
         ];
     }
 }
