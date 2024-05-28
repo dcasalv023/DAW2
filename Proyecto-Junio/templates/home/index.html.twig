@@ -1,20 +1,62 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Canciones Anime{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('ruta/a/tu/imagen/fondo.jpg') no-repeat center center fixed; /* Cambia 'ruta/a/tu/imagen/fondo.jpg' por la ruta de tu imagen de fondo */
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        .container {
+            margin-top: 50px;
+            text-align: center;
+            color: #fff;
+        }
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/Daniel/Desktop/DAW2/DWES/ProyectoFinal/Final/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>C:/Users/Daniel/Desktop/DAW2/DWES/ProyectoFinal/Final/templates/home/index.html.twig</code></li>
-    </ul>
-</div>
+        h1 {
+            font-family: 'Impact', sans-serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        /* Degradado para el encabezado */
+        .header {
+            background-image: linear-gradient(to right, #ff69b4, #ffb6c1); /* Colores rosados */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); /* Sombra rosa */
+        }
+
+        /* Estilos para el logo */
+        .logo {
+            max-width: 65%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <div class="header">
+        <div class="container">
+            <h1 class="mt-5">¡BIENVENIDO A AnimeSound, LA MEJOR APP DE MÚSICA EN DIRECTO!</h1>
+            <img src="../uploads/images/logo.png" alt="logo" class="logo">
+            <h4>Aquí podrás escuchar todo tipo de canciones, de cualquier época o año, sea cuál sea tu gusto, en el instante que quieras</h4>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 {% endblock %}
