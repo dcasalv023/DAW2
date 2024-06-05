@@ -28,15 +28,15 @@ class Authenticator extends AbstractLoginFormAuthenticator
 
     public function authenticate(Request $request): Passport
     {
-        $email = $request->request->get('email', '');
+        $username = $request->getPayload()->getString('username');
 
-        $request->getSession()->set(SecurityRequestAttributes::LAST_USERNAME, $email);
+        $request->getSession()->set(SecurityRequestAttributes::LAST_USERNAME, $username);
 
         return new Passport(
-            new UserBadge($email),
-            new PasswordCredentials($request->request->get('password', '')),
+            new UserBadge($username),
+            new PasswordCredentials($request->getPayload()->getString('password')),
             [
-                new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
+                new CsrfTokenBadge('authenticate', $request->getPayload()->getString('_csrf_token')),
                 new RememberMeBadge(),
             ]
         );
@@ -44,19 +44,14 @@ class Authenticator extends AbstractLoginFormAuthenticator
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
-        $correo = $request->request->get('email', '');
-
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
 
+        return new RedirectResponse($this->urlGenerator->generate('app_home'));
+
         // For example:
-        if(strpos($correo, 'admin') !== false){
-            return new RedirectResponse($this->urlGenerator->generate('admin'));
-        }else{
-            return new RedirectResponse($this->urlGenerator->generate('hub'));
-        }     
-        
+        // return new RedirectResponse($this->urlGenerator->generate('some_route'));
         // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
