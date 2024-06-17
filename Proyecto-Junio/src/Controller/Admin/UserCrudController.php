@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controller\Admin;
 
 use App\Entity\User;
@@ -34,3 +33,4 @@ class UserCrudController extends AbstractCrudController
         ];
     }
 }
+
