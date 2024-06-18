@@ -19,7 +19,7 @@ class CancionCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            TextField::new('tituloo', 'Título'),
+            TextField::new('titulo', 'Título'),
             TextField::new('autor', 'Autor'),
             TextField::new('genero', 'Género'),
             ImageField::new('foto', 'Foto')
